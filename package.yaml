@@ -1,0 +1,140 @@
+spec-version: 0.31.2
+
+name:        shootout
+category:    Math
+synopsis:    A small n-player game.
+description: >
+  TODO: Write description.
+
+version:       0.0.0.0
+stability:     experimental
+build-type:    Simple
+tested-with:   GHC >=8.6.5 && <8.7
+
+author:      greatBigDot
+maintainer:  greatBigDot@gmail.com
+github:      greatBigDot/shootout
+# homepage:    # The default (as inferred from `github`) is what I want.
+# bug-reports: # ^ Ditto.
+# git:         # "No effect if `github` given".
+copyright:   (c) greatBigDot, 2019
+license:     BSD-3-Clause
+
+source-dirs:  src
+license-file: LICENSE
+extra-source-files:
+  - README.md
+  - stack.yaml
+
+buildable: true
+dependencies:
+  - base >=4.12.0 && <4.13
+  # - singletons 
+  # - constraints 
+
+library:
+  exposed: true
+  exposed-modules:
+    - Data.Shootout
+  other-modules:
+    - Data.Shootout.Base
+
+executable:
+  main: Main
+  other-modules:
+    - Data.Shootout
+    - Data.Shootout.Base
+
+other-extensions:
+  - UnicodeSyntax
+  - TupleSections
+  - LambdaCase
+  - EmptyCase
+
+  - StandaloneDeriving
+
+  - BangPatterns
+
+  - EmptyDataDecls
+  - TypeOperators
+  - LiberalTypeSynonyms
+  - ExistentialQuantification
+  - ExplicitForAll            # <-LiTySy, ExQu, ScopedTypeVariables, RankNTypes
+  - InstanceSigs
+  - PartialTypeSignatures
+  - NoStarIsType
+
+  - GADTSyntax
+  - GADTs
+  - FlexibleContexts      # <- ImplicitParams
+  - MultiParamTypeClasses # <- FunctionalDependencies
+  - FlexibleInstances     # <- ImplicitParams
+  - TypeSynonymInstances  # <- FlIn, ImplicitParams
+  - DefaultSignatures
+  - PatternSynonyms
+  - ViewPatterns
+
+  - FunctionalDependencies
+  - ConstraintKinds
+  - ScopedTypeVariables
+  - ImplicitParams
+  - TypeApplications
+  - QuantifiedConstraints
+  - RankNTypes
+  - TypeFamilyDependencies
+  - TypeFamilies           # <- TypeFamilyDependencies
+  - KindSignatures         # <- TypeInType, PolyKinds, TypeFamilies
+                           #    , TypeFamilyDependencies
+
+  - DataKinds      # <- TypeInType
+  - PolyKinds      # <- TypeInType
+  # TypeInType: The best extension, before all of its functionality shifted into
+  #             the above (which all existed before anyway).
+
+  ##############################################################################
+
+  - Safe
+
+  - NoImplicitPrelude
+
+  - OverloadedStrings
+  - BinaryLiterals
+  - HexFloatLiterals
+  - OverloadedLists
+  - ParallelListComp
+  - MonadComprehensions
+  - PostfixOperators
+  - MultiWayIf
+
+  # - EmptyDataDeriving # Apparently cabal doesn't know about this yet.
+  - DeriveAnyClass
+  - DerivingStrategies
+  # - DerivingVia # Also apparently not recognized by cabal yet.
+
+  - NoMonomorphismRestriction
+
+  - DuplicateRecordFields
+  - NamedFieldPuns
+  - NamedWildCards
+
+  - AllowAmbiguousTypes
+  - UndecidableInstances
+  - UndecidableSuperClasses
+
+  # Unsafe:
+  - GeneralizedNewtypeDeriving
+
+  - TemplateHaskell
+
+  ##############################################################################
+  # ONLY useful as extensions (for my purposes):
+  # - TransformListComp        # <- MonadComprehensions
+  # - ExplicitNamespaces       # <- TypeOperators, TypeFamilies, TypeFamilyDependencies
+  # - MonoLocalBinds           # <- GADTs, TypeFamilies, TypeFamilyDependencies
+  # - DisambiguateRecordFields # <- DuplicateRecordFields
+  # - ConstrainedClassMethods  # <- MultiParamTypeClasses, FunctionalDependencies
+
+# ghc-options:
+
+# verbatim:
+  # package-url: package-url: https://hackage.haskell.org/package/shootout-0.0.0.0/shootout-0.0.0.0.tar.gz
