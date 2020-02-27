@@ -4,7 +4,7 @@ cabal-version: 2.2
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 16e438e86140ed5565739aacaf8b41aced6a2492221e77fc4d4b3bdab8523fde
+-- hash: 6479eb66122a87d6fbf8ff7cead947b26982f2d38dd2c7fed13313e0e3d160ac
 
 name:           shootout
 version:        0.0.0.0
@@ -35,11 +35,16 @@ library
       Data.Shootout
   other-modules:
       Data.Shootout.Base
+      Orphanage
   hs-source-dirs:
       src
   other-extensions: UnicodeSyntax TupleSections LambdaCase EmptyCase StandaloneDeriving BangPatterns EmptyDataDecls TypeOperators LiberalTypeSynonyms ExistentialQuantification ExplicitForAll InstanceSigs PartialTypeSignatures NoStarIsType GADTSyntax GADTs FlexibleContexts MultiParamTypeClasses FlexibleInstances TypeSynonymInstances DefaultSignatures PatternSynonyms ViewPatterns FunctionalDependencies ConstraintKinds ScopedTypeVariables ImplicitParams TypeApplications QuantifiedConstraints RankNTypes TypeFamilyDependencies TypeFamilies KindSignatures DataKinds PolyKinds Safe NoImplicitPrelude OverloadedStrings BinaryLiterals HexFloatLiterals OverloadedLists ParallelListComp MonadComprehensions PostfixOperators MultiWayIf DeriveAnyClass DerivingStrategies NoMonomorphismRestriction DuplicateRecordFields NamedFieldPuns NamedWildCards AllowAmbiguousTypes UndecidableInstances UndecidableSuperClasses GeneralizedNewtypeDeriving TemplateHaskell
   build-depends:
       base >=4.12.0 && <4.13
+    , fin >=0.0.2 && <0.1
+    , random >=1.1 && <1.2
+    , singletons >=2.5.1 && <2.6
+    , vec >=0.1.1 && <0.2
   buildable: True
   default-language: Haskell2010
 
@@ -54,5 +59,9 @@ executable shootout
   ghc-options: -main-is Main
   build-depends:
       base >=4.12.0 && <4.13
+    , fin >=0.0.2 && <0.1
+    , random >=1.1 && <1.2
+    , singletons >=2.5.1 && <2.6
+    , vec >=0.1.1 && <0.2
   buildable: True
   default-language: Haskell2010

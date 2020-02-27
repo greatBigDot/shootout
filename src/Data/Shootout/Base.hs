@@ -21,9 +21,5 @@
 -- License     : BSD-3-Clause
 -- Maintainer  : greatBigDot@gmail.com
 -- Stability   : experimental
-module Data.Shootout.Base ( foo ) where
+module Data.Shootout.Base ( ) where
 
--- | The central construction of this package: a point in a type with one
--- (nonundefined) element.
-foo ∷ ()
-foo = ()

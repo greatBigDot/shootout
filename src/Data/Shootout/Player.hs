@@ -1,22 +1,27 @@
 {-# LANGUAGE UnicodeSyntax, TupleSections, LambdaCase, EmptyCase #-}
-{-# LANGUAGE StandaloneDeriving #-}
 {-# LANGUAGE BangPatterns #-}
+{-# LANGUAGE StandaloneDeriving #-}
 {-# LANGUAGE EmptyDataDecls, TypeOperators, LiberalTypeSynonyms
              , ExistentialQuantification, ExplicitForAll, InstanceSigs
              , PartialTypeSignatures, NoStarIsType #-}
 {-# LANGUAGE GADTSyntax, GADTs, FlexibleContexts, MultiParamTypeClasses
-             , FlexibleInstances , TypeSynonymInstances, DefaultSignatures
+             , FlexibleInstances, TypeSynonymInstances, DefaultSignatures
              , PatternSynonyms, ViewPatterns #-}
 {-# LANGUAGE FunctionalDependencies, ConstraintKinds, ScopedTypeVariables
              , ImplicitParams, TypeApplications, QuantifiedConstraints
              , RankNTypes, TypeFamilyDependencies, TypeFamilies
              , KindSignatures #-}
 {-# LANGUAGE DataKinds, PolyKinds #-}
-{-# OPTIONS_GHC -Werror=incomplete-patterns #-}
+{-# LANGUAGE TemplateHaskell #-}
+-- {-# OPTIONS_GHC -Werror=incomplete-patterns #-}
 {-# OPTIONS_HADDOCK show-extensions #-}
-module Main ( main ) where
 
-import Data.Shootout()
+-- |
+-- Module      : Data.Shootout.Player
+-- Description :
+-- Copyright   : (c) greatBigDot, 2020
+-- License     : BSD-3-Clause
+-- Maintainer  : greatBigDot@gmail.com
+-- Stability   : experimental
+module Data.Shootout.Player where
 
-main :: IO ()
-main = putStrLn $ "Hello, World! "
